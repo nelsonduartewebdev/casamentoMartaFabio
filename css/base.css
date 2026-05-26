@@ -1,0 +1,29 @@
+/* =====================================================
+   BASE — Reset, variables, body, typography
+===================================================== */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --color-cream:     #EFE8D6;
+  --color-cream-darker: #efe8d6a2;
+  --color-navy:      #32385F;
+  --color-navy-dark: #1e2240;
+  --color-amber:     #A95E20;
+  --font-script: 'Italianno', cursive;
+  --font-body:   'Inter', sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  background: var(--color-cream);
+  color: var(--color-navy);
+}

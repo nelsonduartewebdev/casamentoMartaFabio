@@ -1,0 +1,85 @@
+/* =====================================================
+   COUNTDOWN
+===================================================== */
+
+.countdown {
+  background: var(--color-amber);
+  padding: 36px 24px;
+  text-align: center;
+}
+
+.countdown-label {
+  font-size: 9px;
+  color: var(--color-cream);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+  opacity: 0.85;
+}
+
+.countdown-timer {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 4px;
+}
+
+.countdown-unit {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 56px;
+}
+
+.countdown-number {
+  font-size: clamp(24px, 7vw, 32px);
+  font-weight: 300;
+  color: var(--color-cream);
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.04em;
+}
+
+.countdown-sep {
+  font-size: clamp(22px, 6vw, 28px);
+  color: rgba(239,232,214,0.5);
+  font-weight: 300;
+  padding: 0 2px;
+}
+
+.countdown-sublabel {
+  font-size: 8px;
+  color: rgba(239,232,214,0.65);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-top: 6px;
+}
+
+/* ---- Desktop ---- */
+@media (min-width: 900px) {
+  .countdown {
+    padding: 48px 24px;
+  }
+
+  .countdown-label {
+    font-size: 10px;
+    margin-bottom: 24px;
+  }
+
+  .countdown-unit {
+    min-width: 100px;
+  }
+
+  .countdown-number {
+    font-size: clamp(40px, 4vw, 56px);
+  }
+
+  .countdown-sep {
+    font-size: clamp(36px, 3.5vw, 48px);
+    padding: 0 8px;
+  }
+
+  .countdown-sublabel {
+    font-size: 9px;
+    margin-top: 10px;
+  }
+}

@@ -1,0 +1,162 @@
+/* =====================================================
+   PROGRAM
+===================================================== */
+
+.program {
+  background: var(--color-cream) url('../assets/programa-das-festas-background.jpg') center/cover no-repeat;
+  padding: 44px 44px 52px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Cream wash to keep text readable over the background photo */
+.program::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(239,232,214,0.82);
+  pointer-events: none;
+}
+
+/* Flowers — same PNG, top-left quadrant on the left, top-right quadrant on the right */
+.program-flowers-left,
+.program-flowers-right {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 44%;
+  height: 420px;
+  background-image: url('../assets/flowers-programa-das-festas.png');
+  background-size: 200% auto;
+  background-repeat: no-repeat;
+  opacity: 1;
+  pointer-events: none;
+}
+
+.program-flowers-left {
+  left: 0;
+  background-position: 0% 0%;
+  /* Fade out on outer-left edge, top, and bottom */
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 20%),
+                      linear-gradient(to bottom, transparent 0%, black 15%, black 80%, transparent 100%);
+  -webkit-mask-composite: source-in;
+  mask-image: linear-gradient(to right, transparent 0%, black 20%),
+              linear-gradient(to bottom, transparent 0%, black 15%, black 80%, transparent 100%);
+  mask-composite: intersect;
+}
+
+.program-flowers-right {
+  right: 0;
+  background-position: 100% 0%;
+  /* Fade out on outer-right edge, top, and bottom */
+  -webkit-mask-image: linear-gradient(to left, transparent 0%, black 20%),
+                      linear-gradient(to bottom, transparent 0%, black 15%, black 80%, transparent 100%);
+  -webkit-mask-composite: source-in;
+  mask-image: linear-gradient(to left, transparent 0%, black 20%),
+              linear-gradient(to bottom, transparent 0%, black 15%, black 80%, transparent 100%);
+  mask-composite: intersect;
+}
+
+/* Stacking order: background → cream wash → flowers → text */
+.program-flowers-left,
+.program-flowers-right {
+  z-index: 1;
+}
+
+.program-inner {
+  position: relative;
+  z-index: 2;
+}
+
+.program-title {
+  font-size: 10px;
+  color: var(--color-navy);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  margin-bottom: 32px;
+  opacity: 0.7;
+  text-align: center;
+}
+
+.program-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 14px 0;
+  text-align: center;
+}
+
+.program-item + .program-item {
+  border-top: 1px solid rgba(50,56,95,0.1);
+}
+
+.program-icon {
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
+  flex-shrink: 0;
+  /* Tint to navy to blend with the text */
+  filter: brightness(0) saturate(100%) invert(22%) sepia(25%) saturate(700%) hue-rotate(205deg) brightness(85%);
+  opacity: 0.7;
+}
+
+.program-details {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.program-name {
+  font-family: var(--font-script);
+  font-size: 24px;
+  color: var(--color-navy);
+  line-height: 1;
+}
+
+.program-time {
+  font-size: 11px;
+  color: var(--color-navy);
+  opacity: 0.55;
+  margin-top: 5px;
+  letter-spacing: 0.04em;
+}
+
+/* ---- Desktop ---- */
+@media (min-width: 900px) {
+  .program {
+    padding: 80px 0 88px;
+  }
+
+  .program-flowers-left,
+  .program-flowers-right {
+    width: 24%;
+    height: 500px;
+  }
+
+  .program-inner {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 0 48px;
+  }
+
+  .program-title {
+    font-size: 11px;
+    margin-bottom: 40px;
+  }
+
+  .program-item {
+    padding: 18px 0;
+    gap: 24px;
+  }
+
+  .program-name {
+    font-size: 30px;
+  }
+
+  .program-time {
+    font-size: 12px;
+    margin-top: 6px;
+  }
+}

@@ -1,0 +1,213 @@
+/* =====================================================
+   ACCOMMODATIONS
+===================================================== */
+
+.accommodations {
+  background: var(--color-navy);
+  padding: 52px 24px 60px;
+}
+
+.accommodations-header {
+  text-align: center;
+  margin-bottom: 36px;
+}
+
+.accommodations-label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.accommodations-label-line {
+  width: 28px;
+  height: 1px;
+  background: rgba(239,232,214,0.3);
+}
+
+.accommodations-label-text {
+  font-size: 9px;
+  color: var(--color-cream);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  opacity: 0.7;
+}
+
+.accommodations-title {
+  font-family: var(--font-script);
+  font-size: 38px;
+  color: var(--color-cream);
+  line-height: 1.1;
+  margin-bottom: 8px;
+}
+
+.accommodations-subtitle {
+  font-size: 11px;
+  color: var(--color-cream);
+  opacity: 0.5;
+  letter-spacing: 0.06em;
+  font-weight: 300;
+}
+
+/* ---- Grid ---- */
+.accommodations-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+/* ---- Card ---- */
+.acc-card {
+  background: rgba(239,232,214,0.06);
+  border: 1px solid rgba(239,232,214,0.14);
+  border-radius: 6px;
+  padding: 22px 24px 20px;
+  transition: background 0.2s, border-color 0.2s;
+}
+
+.acc-card:hover {
+  background: rgba(239,232,214,0.10);
+  border-color: rgba(239,232,214,0.25);
+}
+
+.acc-card-top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+.acc-name {
+  font-family: var(--font-script);
+  font-size: 24px;
+  color: var(--color-cream);
+  line-height: 1.1;
+}
+
+.acc-distance {
+  flex-shrink: 0;
+  font-size: 9px;
+  letter-spacing: 0.10em;
+  text-transform: uppercase;
+  color: #fff;
+  background: var(--color-amber);
+  border-radius: 20px;
+  padding: 3px 10px;
+  margin-top: 4px;
+  white-space: nowrap;
+  opacity: 0.9;
+}
+
+.acc-location {
+  font-size: 10px;
+  color: var(--color-cream);
+  opacity: 0.45;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  margin-bottom: 14px;
+}
+
+/* ---- Contacts ---- */
+.acc-contacts {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.acc-contact {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  text-decoration: none;
+  color: var(--color-cream);
+  font-size: 12px;
+  font-weight: 300;
+  opacity: 0.8;
+  transition: opacity 0.15s;
+  word-break: break-all;
+}
+
+.acc-contact:hover {
+  opacity: 1;
+}
+
+.acc-contact-icon {
+  flex-shrink: 0;
+  width: 14px;
+  height: 14px;
+  opacity: 0.5;
+}
+
+/* ---- Card footer ---- */
+.acc-footer {
+  margin-top: 16px;
+  padding-top: 12px;
+  border-top: 1px solid rgba(239,232,214,0.1);
+  font-size: 10px;
+  color: var(--color-cream);
+  opacity: 0.38;
+  letter-spacing: 0.07em;
+}
+
+/* ---- Mobile collapse ---- */
+@media (max-width: 639px) {
+  .accommodations-grid.collapsed .acc-card:nth-child(n+5) {
+    display: none;
+  }
+}
+
+.acc-show-more {
+  display: none;
+  margin: 20px auto 0;
+  background: none;
+  border: 1px solid rgba(239,232,214,0.3);
+  color: var(--color-cream);
+  font-family: var(--font-body);
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 10px 28px;
+  cursor: pointer;
+  transition: background 0.2s, border-color 0.2s;
+}
+
+.acc-show-more:hover {
+  background: rgba(239,232,214,0.08);
+  border-color: rgba(239,232,214,0.55);
+}
+
+@media (max-width: 639px) {
+  .acc-show-more {
+    display: block;
+  }
+}
+
+/* ---- Desktop ---- */
+@media (min-width: 640px) {
+  .accommodations-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (min-width: 900px) {
+  .accommodations {
+    padding: 80px 48px 88px;
+  }
+
+  .accommodations-title {
+    font-size: 48px;
+  }
+
+  .accommodations-grid {
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+  }
+
+  .acc-name {
+    font-size: 26px;
+  }
+}

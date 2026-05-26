@@ -1,0 +1,106 @@
+/* =====================================================
+   FOOTER
+===================================================== */
+
+.footer {
+  background: var(--color-navy-dark) url('../assets/foto-os-nossos-contactos.jpg') center 30%/cover no-repeat;
+    min-height: 1200px;
+  padding: 44px 24px 40px;
+  text-align: center;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+/* Gradient overlay only at bottom for text readability */
+.footer::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, transparent 40%, rgba(10,12,20,0.72) 100%);
+  pointer-events: none;
+}
+
+/* All footer children sit above the overlay */
+.footer > * {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+}
+
+.footer-label {
+  font-size: 10px;
+  color: #fff;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  margin-bottom: 24px;
+}
+
+.footer-contacts {
+  display: flex;
+  justify-content: center;
+  gap: 48px;
+}
+
+.footer-contact {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.contact-name {
+  font-family: var(--font-script);
+  font-size: 28px;
+  color: #fff;
+}
+
+.contact-phone {
+  font-size: 14px;
+  color: rgba(255,255,255,0.75);
+  text-decoration: none;
+  font-weight: 300;
+  letter-spacing: 0.03em;
+  transition: color 0.2s;
+}
+
+.contact-phone:hover {
+  color: #fff;
+}
+
+.footer-divider {
+  height: 1px;
+  background: rgba(255,255,255,0.15);
+  margin: 32px 0;
+}
+
+.footer-sig {
+  font-family: var(--font-script);
+  font-size: 22px;
+  color: rgba(255,255,255,0.4);
+}
+
+/* ---- Desktop ---- */
+@media (min-width: 900px) {
+  .footer {
+    padding: 60px 24px 52px;
+  }
+
+  .footer-contacts {
+    gap: 80px;
+  }
+
+  .contact-name {
+    font-size: 32px;
+  }
+
+  .contact-phone {
+    font-size: 15px;
+  }
+
+  .footer-sig {
+    font-size: 26px;
+  }
+}
