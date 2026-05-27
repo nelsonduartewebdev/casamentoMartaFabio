@@ -4,7 +4,7 @@
 
 .footer {
   background: var(--color-navy-dark) url('../assets/foto-os-nossos-contactos.jpg') center 30%/cover no-repeat;
-    min-height: 1200px;
+  min-height: 600px;
   padding: 44px 24px 40px;
   text-align: center;
   position: relative;
@@ -85,6 +85,7 @@
 /* ---- Desktop ---- */
 @media (min-width: 900px) {
   .footer {
+    min-height: 1200px;
     padding: 60px 24px 52px;
   }
 
